@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 2,
    "id": "4667148d",
    "metadata": {},
    "outputs": [],
@@ -37,28 +37,28 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 46,
    "id": "66c1dc68",
    "metadata": {},
    "outputs": [],
    "source": [
-    "samples = {\n",
+    "    samples = {\n",
     "    \n",
-    "   # 'Zsignal' : {\n",
-    "    #'list' : ['Zee',\n",
-    "             #'Zmumu',\n",
+    "    'Zsignal' : {\n",
+    "    'list' : [#'Zee',\n",
+    "             'Zmumu',\n",
     "             #'Ztautau'\n",
-    "     #        ]\n",
-    "   #},\n",
+    "             ]\n",
+    "   },\n",
     "    \n",
     "    'diboson' : {\n",
-    "        'list' : [#'ZqqZll', \n",
+    "        'list' : ['ZqqZll', \n",
     "                  #'WqqZll',\n",
     "                  #'WpqqWmlv', \n",
     "                  #'WplvWmqq',\n",
     "                  #'WlvZqq',\n",
     "                  'llll',\n",
-    "                  #'lllv',\n",
+    "                  'lllv',\n",
     "                  #'llvv',\n",
     "                  #'lvvv'\n",
     "        ]},\n",
@@ -73,35 +73,35 @@
     "                 ]\n",
     "    },\n",
     "    \n",
-    "    'WJets' : {\n",
-    "    'list' : ['Wplusenu',\n",
+    "    #'WJets' : {\n",
+    "    #'list' : ['Wplusenu',\n",
     "             #'Wplusmunu',\n",
     "             #'Wplustaunu',\n",
     "             #'Wminusenu',\n",
     "             #'Wminusmunu',\n",
     "             #'Wminustaunu'\n",
-    "             ]\n",
-    "             }\n",
+    "     #        ]\n",
+    "     #        }\n",
     "}"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 4,
    "id": "5cfb905e",
    "metadata": {},
    "outputs": [],
    "source": [
     "lumi = 10 # data_A+B+C+D\n",
     "\n",
-    "fraction = 0.1 # fraction for not running the whole data (running it all make the script crash)\n",
+    "fraction = 0.07 # fraction for not running the whole data (running it all make the script crash)\n",
     "\n",
     "tuple_path = \"https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/2lep/\" "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 42,
+   "execution_count": 5,
    "id": "92d1acd9",
    "metadata": {},
    "outputs": [],
@@ -117,7 +117,7 @@
     "            else: # MC prefix\n",
     "                prefix = \"MC/mc_\"+str(infofile.infos[val][\"DSID\"])+\".\"\n",
     "            fileString = tuple_path+prefix+val+\".2lep.root\" \n",
-    "            temp = read_file1(fileString,val) \n",
+    "            temp = read_file(fileString,val) \n",
     "            frames.append(temp) \n",
     "        data[s] = pd.concat(frames) \n",
     "    \n",
@@ -126,7 +126,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 6,
    "id": "2ba1def3",
    "metadata": {},
    "outputs": [],
@@ -139,7 +139,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 7,
    "id": "0f1d517c",
    "metadata": {},
    "outputs": [],
@@ -168,7 +168,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 8,
    "id": "8ffa5043",
    "metadata": {},
    "outputs": [],
@@ -182,7 +182,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 9,
    "id": "5e9c8342",
    "metadata": {},
    "outputs": [],
@@ -201,7 +201,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 10,
    "id": "663d3e53",
    "metadata": {},
    "outputs": [],
@@ -234,7 +234,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 11,
    "id": "55530357",
    "metadata": {},
    "outputs": [],
@@ -245,7 +245,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 12,
    "id": "a98e3a80",
    "metadata": {},
    "outputs": [],
@@ -268,7 +268,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 13,
    "id": "01d3197b",
    "metadata": {},
    "outputs": [],
@@ -294,7 +294,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 33,
+   "execution_count": 14,
    "id": "67b64481",
    "metadata": {},
    "outputs": [],
@@ -305,7 +305,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 15,
    "id": "cdcc8bcb",
    "metadata": {},
    "outputs": [],
@@ -324,7 +324,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 35,
+   "execution_count": 16,
    "id": "9b89b814",
    "metadata": {},
    "outputs": [],
@@ -338,7 +338,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 36,
+   "execution_count": 17,
    "id": "0ba879d6",
    "metadata": {},
    "outputs": [],
@@ -360,7 +360,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 37,
+   "execution_count": 34,
    "id": "85f9cac4",
    "metadata": {},
    "outputs": [],
@@ -407,37 +407,18 @@
     "        fail = data[ np.vectorize(check_jets)(data.jet_n)].index\n",
     "        data.drop(fail, inplace=True)\n",
     "        \n",
-    "        #we're going to separate information from signal and background.\n",
-    "        #The invariant mass and the leading and subleading leptons\n",
-    "        #first, for signal\n",
-    "        if ('ee' or 'mumu') in sample:\n",
-    "            data['mllsignal'] = np.vectorize(calc_mll)(data.lep_pt, data.lep_eta, data.lep_phi, data.lep_E)#Calc invariant mass\n",
-    "            fail = data[ np.vectorize(mass_selection)(data.mllsignal)].index\n",
-    "            data.drop(fail, inplace=True)#just keep good masses\n",
-    "            data['lead_ptsignal'] = np.vectorize(lead_lep)(data.lep_pt)#save pt of leading lepton\n",
-    "            data['sublead_ptsignal'] = np.vectorize(sublead_lep)(data.lep_pt)#save pt subleading lepton\n",
-    "            data['totalWeightsignal'] = np.vectorize(calc_weight)(xsec_weight,\n",
+    "        #Then, we save tha value of the invariant mass\n",
+    "        data['mll'] = np.vectorize(calc_mll)(data.lep_pt, data.lep_eta, data.lep_phi, data.lep_E)#Calc invariant mass\n",
+    "        fail = data[ np.vectorize(mass_selection)(data.mll)].index\n",
+    "        data.drop(fail, inplace=True)#just keep good masses\n",
+    "        data['lead_pt'] = np.vectorize(lead_lep)(data.lep_pt)#save pt of leading lepton\n",
+    "        data['sublead_pt'] = np.vectorize(sublead_lep)(data.lep_pt)#save pt subleading lepton\n",
+    "        data['totalWeight'] = np.vectorize(calc_weight)(xsec_weight,\n",
     "                                                            data.mcWeight,\n",
     "                                                            data.scaleFactor_PILEUP,\n",
     "                                                            data.scaleFactor_ELE,\n",
     "                                                            data.scaleFactor_MUON,\n",
     "                                                            data.scaleFactor_LepTRIGGER)\n",
-    "            #we also save the information in root files, with two trees, for signal and background\n",
-    "            roof[\"signal\"].extend({\"mll\": data.mllsignal, \"lead_lep\": data.lead_ptsignal, \"sublead_lep\": data.sublead_ptsignal, \"weight\": data.totalWeightsignal})\n",
-    "        else:\n",
-    "            data['mllbck'] = np.vectorize(calc_mll)(data.lep_pt, data.lep_eta, data.lep_phi, data.lep_E)\n",
-    "            fail = data[ np.vectorize(mass_selection)(data.mllbck)].index\n",
-    "            data.drop(fail, inplace=True)\n",
-    "            data['lead_ptbck'] = np.vectorize(lead_lep)(data.lep_pt)\n",
-    "            data['sublead_ptbck'] = np.vectorize(sublead_lep)(data.lep_pt)\n",
-    "            data['totalWeightbck'] = np.vectorize(calc_weight)(xsec_weight,\n",
-    "                                                            data.mcWeight,\n",
-    "                                                            data.scaleFactor_PILEUP,\n",
-    "                                                            data.scaleFactor_ELE,\n",
-    "                                                            data.scaleFactor_MUON,\n",
-    "                                                            data.scaleFactor_LepTRIGGER)\n",
-    "            roof[\"background\"].extend({\"mll\": data.mllbck, \"lead_lep\": data.lead_ptbck, \"sublead_lep\": data.sublead_ptbck, \"weight\": data.totalWeightbck})\n",
-    "            \n",
     "                \n",
     "\n",
     "        \n",
@@ -461,33 +442,18 @@
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": 38,
-   "id": "0f348e9e",
+   "cell_type": "markdown",
+   "id": "6b7fee0d",
    "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "<TFileRecreate b'mcdata1.root' at 0x7fbf87534250>"
-      ]
-     },
-     "execution_count": 38,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
    "source": [
     "roof = uproot3.recreate(\"mcdata1.root\")\n",
     "roof"
    ]
   },
   {
-   "cell_type": "code",
-   "execution_count": 39,
-   "id": "b7bea6f4",
+   "cell_type": "markdown",
+   "id": "67a0a221",
    "metadata": {},
-   "outputs": [],
    "source": [
     "roof[\"signal\"] = uproot3.newtree({\"mll\": np.float32, \"lead_lep\": np.float32, \"sublead_lep\": np.float32, \"weight\": np.float32})\n",
     "roof[\"background\"] = uproot3.newtree({\"mll\": np.float32, \"lead_lep\": np.float32, \"sublead_lep\": np.float32, \"weight\": np.float32})"
@@ -503,7 +469,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 43,
+   "execution_count": 47,
    "id": "bad4237e",
    "metadata": {},
    "outputs": [
@@ -511,28 +477,238 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Processing diboson samples\n"
-     ]
-    },
-    {
-     "ename": "NameError",
-     "evalue": "name 'read_file1' is not defined",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[0;32m/tmp/ipykernel_2412/2756890338.py\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mstart\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mtime\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtime\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;31m# time at start of whole processing\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mdata\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mget_data_from_files\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;31m# process all files\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0mroof1\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mclose\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      4\u001b[0m \u001b[0melapsed\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mtime\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mtime\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;34m-\u001b[0m \u001b[0mstart\u001b[0m \u001b[0;31m# time after whole processing\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      5\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m\"Time taken: \"\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mround\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0melapsed\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0;34m\"s\"\u001b[0m\u001b[0;34m)\u001b[0m \u001b[0;31m# print total time taken to process every file\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;32m/tmp/ipykernel_2412/294513215.py\u001b[0m in \u001b[0;36mget_data_from_files\u001b[0;34m()\u001b[0m\n\u001b[1;32m     10\u001b[0m                 \u001b[0mprefix\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m\"MC/mc_\"\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0mstr\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minfofile\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0minfos\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0mval\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;34m\"DSID\"\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0;34m\".\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     11\u001b[0m             \u001b[0mfileString\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mtuple_path\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0mprefix\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0mval\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0;34m\".2lep.root\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 12\u001b[0;31m             \u001b[0mtemp\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mread_file1\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mfileString\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mval\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m     13\u001b[0m             \u001b[0mframes\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mappend\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mtemp\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     14\u001b[0m         \u001b[0mdata\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0ms\u001b[0m\u001b[0;34m]\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mpd\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mconcat\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mframes\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
-      "\u001b[0;31mNameError\u001b[0m: name 'read_file1' is not defined"
+      "Processing Zsignal samples\n",
+      "\tProcessing: Zmumu\n",
+      "\t\t nIn: 145063,\t nOut: \t84500\t in 46.0s\n",
+      "\t\t nIn: 145063,\t nOut: \t84696\t in 74.5s\n",
+      "\t\t nIn: 145063,\t nOut: \t84475\t in 110.3s\n",
+      "\t\t nIn: 145063,\t nOut: \t84734\t in 140.3s\n",
+      "\t\t nIn: 145063,\t nOut: \t84602\t in 176.8s\n",
+      "\t\t nIn: 145063,\t nOut: \t84772\t in 218.7s\n",
+      "\t\t nIn: 145063,\t nOut: \t84408\t in 250.6s\n",
+      "\t\t nIn: 145063,\t nOut: \t84950\t in 288.3s\n",
+      "\t\t nIn: 145063,\t nOut: \t84658\t in 321.0s\n",
+      "\t\t nIn: 145063,\t nOut: \t84483\t in 358.4s\n",
+      "\t\t nIn: 97967,\t nOut: \t56874\t in 381.9s\n",
+      "Processing diboson samples\n",
+      "\tProcessing: ZqqZll\n",
+      "\t\t nIn: 98220,\t nOut: \t4012\t in 24.3s\n",
+      "\tProcessing: llll\n",
+      "\t\t nIn: 106415,\t nOut: \t6667\t in 27.4s\n",
+      "\t\t nIn: 106415,\t nOut: \t6593\t in 36.7s\n",
+      "\t\t nIn: 85798,\t nOut: \t5309\t in 47.5s\n",
+      "\tProcessing: lllv\n",
+      "\t\t nIn: 106380,\t nOut: \t2729\t in 52.8s\n",
+      "\t\t nIn: 106380,\t nOut: \t2762\t in 70.0s\n",
+      "\t\t nIn: 52665,\t nOut: \t1347\t in 78.9s\n",
+      "Processing single_top samples\n",
+      "\tProcessing: single_top_tchan\n",
+      "\t\t nIn: 2579,\t nOut: \t8\t in 1.2s\n",
+      "Time taken: 537.8s\n"
      ]
     }
    ],
    "source": [
     "start = time.time() # time at start of whole processing\n",
     "data = get_data_from_files() # process all files\n",
-    "roof1.close()\n",
     "elapsed = time.time() - start # time after whole processing\n",
     "print(\"Time taken: \"+str(round(elapsed,1))+\"s\") # print total time taken to process every file"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "fa21dfa9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Zsignal':              mll    lead_pt  sublead_pt\n",
+       " entry                                  \n",
+       " 0      96.437902  59.853551   36.053645\n",
+       " 2      89.374513  31.101098   29.755781\n",
+       " 3      66.346769  39.272441   27.427332\n",
+       " 7      83.501239  44.986766   27.580324\n",
+       " 8      86.343173  49.866738   32.010543\n",
+       " ...          ...        ...         ...\n",
+       " 12390  72.525405  41.659898   31.402355\n",
+       " 12397  80.832368  35.258590   34.822457\n",
+       " 12439  68.375047  37.293613   29.522963\n",
+       " 12489  76.803232  48.588219   29.210387\n",
+       " 12540  74.904122  39.423984   35.579734\n",
+       " \n",
+       " [903491 rows x 3 columns],\n",
+       " 'diboson':               mll    lead_pt  sublead_pt\n",
+       " entry                                   \n",
+       " 10      81.861584  34.424352   21.918508\n",
+       " 20      87.515479  55.953770   34.255965\n",
+       " 37      76.861029  44.088988   28.396139\n",
+       " 52      89.942979  46.832094   44.034062\n",
+       " 66      67.186258  36.522566   30.805287\n",
+       " ...           ...        ...         ...\n",
+       " 298583  85.816306  34.103008   30.343885\n",
+       " 298606  99.553750  43.745988   41.560977\n",
+       " 298609  69.982886  34.678555   34.607980\n",
+       " 298616  78.316613  42.818219   25.434525\n",
+       " 298618  84.360491  46.591848   37.909133\n",
+       " \n",
+       " [18569 rows x 3 columns],\n",
+       " 'single_top':              mll    lead_pt  sublead_pt\n",
+       " entry                                  \n",
+       " 154    75.313851  31.020074    7.090479\n",
+       " 420    73.330619  36.603496    9.136718\n",
+       " 537    78.898357  84.510008   10.939663\n",
+       " 668    71.233469  38.016438    8.916062\n",
+       " 1397   79.551916  57.643223   18.144590\n",
+       " 1759   95.730138  73.268383   23.727336\n",
+       " 2239   96.640405  42.158047   22.278572\n",
+       " 2379   73.891307  38.936520   10.673507}"
+      ]
+     },
+     "execution_count": 36,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "data_for_BDT = {} \n",
+    "BDT_inputs = ['mll','lead_pt','sublead_pt'] # list of features for BDT\n",
+    "for key in data: # loop over the different keys in the dictionary of dataframes\n",
+    "    data_for_BDT[key] = data[key][BDT_inputs].copy()\n",
+    "data_for_BDT"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "931c6ef4",
+   "metadata": {},
+   "source": [
+    "Organising data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "1d6e378c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# one 2D array of shape (n_samples x n_features) \n",
+    "\n",
+    "all_MC = [] \n",
+    "for key in data: \n",
+    "    if key!='data': #Basically, all samples\n",
+    "        all_MC.append(data_for_BDT[key])\n",
+    "X = np.concatenate(all_MC) \n",
+    "\n",
+    "all_y = [] \n",
+    "for key in data: \n",
+    "    if key!='Zsignal' and key!='data': #Just background samples\n",
+    "        all_y.append(np.zeros(data_for_BDT[key].shape[0])) # background events are labelled with 0\n",
+    "all_y.append(np.ones(data_for_BDT['Zsignal'].shape[0])) # signal events are labelled with 1\n",
+    "y = np.concatenate(all_y) # concatenate the list of lables into a single 1D array of labels, called y"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "aac37527",
+   "metadata": {},
+   "source": [
+    "Split for training and testing"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "f1f43892",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.model_selection import train_test_split\n",
+    "\n",
+    "# make train and test sets\n",
+    "X_train,X_test, y_train,y_test = train_test_split(X, y, \n",
+    "                                                  test_size=0.33, \n",
+    "                                                  random_state=492 )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "3a9daf57",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Time taken to fit BDT: 9.8s\n",
+      "AdaBoostClassifier(algorithm='SAMME',\n",
+      "                   base_estimator=DecisionTreeClassifier(max_depth=2),\n",
+      "                   learning_rate=0.5, n_estimators=12)\n"
+     ]
+    }
+   ],
+   "source": [
+    "from sklearn.tree import DecisionTreeClassifier\n",
+    "from sklearn.ensemble import AdaBoostClassifier\n",
+    "\n",
+    "dt = DecisionTreeClassifier(max_depth=2) # maximum depth of the tree\n",
+    "bdt = AdaBoostClassifier(dt,\n",
+    "                        algorithm='SAMME', # SAMME discrete boosting algorithm\n",
+    "                        n_estimators=12, # max number of estimators at which boosting is terminated\n",
+    "                        learning_rate=0.5) # shrinks the contribution of each classifier by learning_rate\n",
+    "\n",
+    "start = time.time() # time at start of BDT fit\n",
+    "bdt.fit(X_train, y_train) # fit BDT to training set\n",
+    "elapsed = time.time() - start # time after fitting BDT\n",
+    "print(\"Time taken to fit BDT: \"+str(round(elapsed,1))+\"s\") # print total time taken to fit BDT\n",
+    "print(bdt)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "9ea16507",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/cvmfs/sft.cern.ch/lcg/views/LCG_101swan/x86_64-centos7-gcc10-opt/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.\n",
+      "  _warn_prf(average, modifier, msg_start, len(result))\n",
+      "/cvmfs/sft.cern.ch/lcg/views/LCG_101swan/x86_64-centos7-gcc10-opt/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.\n",
+      "  _warn_prf(average, modifier, msg_start, len(result))\n",
+      "/cvmfs/sft.cern.ch/lcg/views/LCG_101swan/x86_64-centos7-gcc10-opt/lib/python3.9/site-packages/sklearn/metrics/_classification.py:1248: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.\n",
+      "  _warn_prf(average, modifier, msg_start, len(result))\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "              precision    recall  f1-score   support\n",
+      "\n",
+      "  background       0.00      0.00      0.00      6033\n",
+      "      signal       0.98      1.00      0.99    298250\n",
+      "\n",
+      "    accuracy                           0.98    304283\n",
+      "   macro avg       0.49      0.50      0.49    304283\n",
+      "weighted avg       0.96      0.98      0.97    304283\n",
+      "\n",
+      "Area under ROC curve for test data: 0.5034\n"
+     ]
+    }
+   ],
+   "source": [
+    "from sklearn.metrics import classification_report, roc_auc_score\n",
+    "y_predicted = bdt.predict(X_test) # get predicted y for test set\n",
+    "print (classification_report(y_test, y_predicted,\n",
+    "                            target_names=[\"background\", \"signal\"]))\n",
+    "print (\"Area under ROC curve for test data: %.4f\"%(roc_auc_score(y_test,\n",
+    "                                                    bdt.decision_function(X_test))) )"
    ]
   }
  ],

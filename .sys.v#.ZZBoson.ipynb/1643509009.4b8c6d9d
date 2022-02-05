@@ -42,7 +42,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "samples = {\n",
+    "    samples = {\n",
     "    \n",
     "    'Zsignal' : {\n",
     "    'list' : ['Zee',\n",
@@ -94,7 +94,7 @@
    "source": [
     "lumi = 10 # data_A+B+C+D\n",
     "\n",
-    "fraction = 0.1 # fraction for not running the whole data (running it all make the script crash)\n",
+    "fraction = 0.03 fraction for not running the whole data (running it all make the script crash)\n",
     "\n",
     "tuple_path = \"https://atlas-opendata.web.cern.ch/atlas-opendata/samples/2020/2lep/\" "
    ]
