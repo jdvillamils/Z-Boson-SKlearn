@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7a2a47d4",
+   "id": "d311bb07",
    "metadata": {},
    "source": [
     "This notebook uses the available Atlas Open Data http://opendata.atlas.cern, to study the ZZ diboson production http://opendata.atlas.cern/release/2020/documentation/physics/FL1.html.\n",
@@ -333,7 +333,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7e3d577c",
+   "id": "cbd1d8be",
    "metadata": {},
    "source": [
     "Choose the variables for the BDT and organise the data"
@@ -373,13 +373,28 @@
    "source": [
     "When training a learning program, it is necessary to use just a fraction of the information for the training, usually the propotions of the samples used for testing and training vary according to 50%-50% or 67%-33%, depending the specific case. These two samples are independet and should not be mixed or used for test if it corresponds to training or viceversa.  \n",
     "\n",
-    "In this example, we use a proportion 50%-50%"
+    "In this examples, we use a proportion 50%-50%"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 94,
+   "execution_count": 90,
    "id": "f1f43892",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from sklearn.model_selection import train_test_split\n",
+    "\n",
+    "# make train and test sets\n",
+    "X_train,X_test, y_train,y_test = train_test_split(X, y, \n",
+    "                                                  test_size=0.50, \n",
+    "                                                  random_state=492 )"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 91,
+   "id": "3a9daf57",
    "metadata": {},
    "outputs": [
     {
@@ -394,14 +409,8 @@
     }
    ],
    "source": [
-    "from sklearn.model_selection import train_test_split\n",
     "from sklearn.tree import DecisionTreeClassifier\n",
     "from sklearn.ensemble import AdaBoostClassifier\n",
-    "\n",
-    "# make train and test sets\n",
-    "X_train,X_test, y_train,y_test = train_test_split(X, y, \n",
-    "                                                  test_size=0.50, \n",
-    "                                                  random_state=492 )\n",
     "\n",
     "dt = DecisionTreeClassifier(max_depth=2) # maximum depth of the tree\n",
     "bdt = AdaBoostClassifier(dt,\n",
@@ -414,14 +423,6 @@
     "elapsed = time.time() - start # time after fitting BDT\n",
     "print(\"Time taken to fit BDT: \"+str(round(elapsed,1))+\"s\") # print total time taken to fit BDT\n",
     "print(bdt)"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "896b7f65",
-   "metadata": {},
-   "source": [
-    "This is a report to quick check the classifier performance"
    ]
   },
   {
@@ -530,14 +531,6 @@
     "plt.title('Receiver operating characteristic (ROC) curve') # title\n",
     "plt.legend() # add legend\n",
     "plt.grid() # add grid"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "9270c98c",
-   "metadata": {},
-   "source": [
-    "The first plot shows the distribution of signal and background according to the BDT value. Clearly the higher the BDT value, the less the background there is, but is important to note that at high BDT values, also the amount of signal decreases, so a good range of BDT values is between 0 and 0.4. Of course this may vary depending the process of interest."
    ]
   }
  ],

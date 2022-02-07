@@ -10,7 +10,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7a2a47d4",
+   "id": "bc66284f",
    "metadata": {},
    "source": [
     "This notebook uses the available Atlas Open Data http://opendata.atlas.cern, to study the ZZ diboson production http://opendata.atlas.cern/release/2020/documentation/physics/FL1.html.\n",
@@ -333,7 +333,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7e3d577c",
+   "id": "e097af17",
    "metadata": {},
    "source": [
     "Choose the variables for the BDT and organise the data"
@@ -418,7 +418,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "896b7f65",
+   "id": "0be9cedc",
    "metadata": {},
    "source": [
     "This is a report to quick check the classifier performance"
@@ -534,10 +534,10 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9270c98c",
+   "id": "e28251db",
    "metadata": {},
    "source": [
-    "The first plot shows the distribution of signal and background according to the BDT value. Clearly the higher the BDT value, the less the background there is, but is important to note that at high BDT values, also the amount of signal decreases, so a good range of BDT values is between 0 and 0.4. Of course this may vary depending the process of interest."
+    "The first plot shows the distribution of signal and background according to the BDT value. Clearly the higher the BDT value, the less the background there is, but is important to note that at high BDT values, also the amount of "
    ]
   }
  ],
